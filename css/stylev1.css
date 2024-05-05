@@ -1,0 +1,809 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    color: #242424;
+    overflow-x: hidden;
+    background-color: #F5F3EF;
+}
+
+
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: salmon;
+    background-size: cover;
+    border-radius: 5px;
+    border: none;
+}
+
+
+.pagelinebreak {
+    width: 90%;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.pagelinebreak .inducedlines {
+    height: .5px;
+    width: 100%;
+    margin-bottom: 3.5px;
+    background: #000;
+}
+
+
+.mandalabackground {
+    position: absolute;
+    left: 515px;
+    top: 120px;
+    width: 500px;
+    height: 500px;
+    z-index: -100000;
+}
+
+
+.topbar {
+    width: 83%;
+    height: 60px;
+    margin-top: 50px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-family: 'Cinzel Decorative', serif;
+}
+
+.topbar .logoname {
+    position: absolute;
+    left: 130px;
+    margin-top: 25px;
+    font-size: 27px;
+    font-family: 'Cinzel Decorative', serif;
+}
+
+.topbar .topbarbuttonbox {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    position: absolute;
+    right: 130px;
+}
+
+.topbar .topbarbuttonbox .accountboxtrigger {
+    width: 140px;
+    height: 46px;
+    border: 2px solid #E9E4D8;
+    font-size: 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    background: #E9E4D8;
+    font-family: "poppins";
+    transition: .3s ease-in-out;
+}
+
+.topbar .topbarbuttonbox .accountboxtrigger:hover {
+    background: #E9E4D8;
+    transition: .3s ease-in-out;
+    border: 2px solid #c5c0b4;
+}
+
+.topbar .topbarbuttonbox .crown {
+    width: 46px;
+    height: 46px;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    cursor: pointer;
+    margin-left: 15px;
+    background: #E9E4D8;
+    border-radius: 50%;
+}
+
+.topbar .topbarbuttonbox .crown img {
+    width: 35px;
+    height: 35px;
+    border: none;
+    margin-top: -2px;
+    border-radius: 50%;
+}
+
+
+
+.topbar .searchbox {
+    width: 370px;
+    height: max-content;
+    /* display: flex;
+    justify-content: center; */
+    z-index: 1000;
+    transition: 0.6s ease-in-out;
+}
+
+.topbar .postsearch {
+    width: 310px;
+    height: 45px;
+    border: none;
+    outline: none;
+    float: left;
+    letter-spacing: .7px;
+    border-radius: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background: #E9E4D8;
+    font-family: 'poppins', sans-serif;
+    font-weight: bolder;
+    color: black;
+}
+
+.topbar .searchpostbtn {
+    width: 45px;
+    height: 45px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    color: black;
+    font-size: 18px;
+    background: #E9E4D8;
+    margin-left: -60px;
+    border-radius: 50%;
+}
+
+.topbar .searchpostbtn i {
+    margin-top: 5px;
+}
+
+
+.searchresults {
+    display: none;
+    width: 460px;
+    height: 400px;
+    overflow-y: scroll;
+    margin-top: 10px;
+    z-index: 200;
+    border: 1px solid #fa807254;
+    border-radius: 20px 0 0 20px;
+    font-family: 'poppins', sans-serif;
+    color: #000;
+    background: #ede8de;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.searchresults .searchinstruction{
+    text-align: left;
+    width: 360px;
+    margin-top: 140px;
+    letter-spacing: .5px;
+}
+
+.searchresults .post {
+    width: 400px;
+    height: 130px;
+    float: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid red;
+}
+
+.searchresults .post h2 {
+    float: left;
+    height: 55px;
+    margin-left: 5px;
+    text-align: left;
+    font-size: 18px;
+}
+
+.searchresults .post button {
+    width: 80px;
+    height: 35px;
+    border: 1.5px solid black;
+    color: #4e4c23;
+    cursor: pointer;
+    float: left;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 25px;
+    font-weight: bolder;
+    letter-spacing: 1.5px;
+    background: #E9E4D8;
+    transition: .3s ease-in-out;
+    font-family: "poppins", sans-serif;
+}
+
+.searchresults .post button:hover {
+    color: #fff;
+    background: #cb1954;
+    border: 1.5px solid #cb1954;
+}
+
+
+
+
+.useraccountbox {
+    display: none;
+    position: absolute;
+    top: 120px;
+    right: 25px;
+    width: 400px;
+    height: 550px;
+    border-radius: 25px;
+    background: #F5F3EF;
+    border: 4px solid #4e4c23;
+}
+
+.useraccountbox .closeuseraccountboxbtn {
+    position: absolute;
+    right: 165px;
+    top: -68px;
+    font-size: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
+    background: transparent;
+    width: max-content;
+    height: 47px;
+    color: #cb1954;
+    cursor: pointer;
+    border: none;
+    background: #E9E4D8;
+    border-radius: 15px;
+}
+
+.useraccountbox .openloginsignupboxbtn {
+    width: max-content;
+    height: 45px;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+    left: 120px;
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 4px solid #323232;
+    background: #323232;
+    font-family: 'poppins';
+}
+
+.useraccountbox .accountcreatedinfo {
+    display: none;
+    margin-top: 120px;
+    width: 230px;
+    text-align: justify;
+    hyphens: auto;
+    font-family: "Cinzel Decorative";
+}
+
+.useraccountbox .usernameandprofile {
+    width: 370px;
+    height: 100px;
+    margin: auto;
+    margin-top: 30px;
+    /* display: flex;
+    align-items: center; */
+    border-radius: 25px;
+    background: #F9FBF7;
+}
+
+.useraccountbox .usernameandprofile img {
+    width: 60px;
+    height: 60px;
+    float: left;
+    border-radius: 50%;
+    margin-top: 16px;
+    margin-left: 20px;
+    border: 4px solid #eaeade;
+}
+
+.useraccountbox .usernameandprofile .usernameandemaildisplay {
+    width: 260px;
+    height: 70px;
+    position: absolute;
+    top: 36px;
+    margin-left: 100px;
+    /* border: 2px solid black; */
+}
+
+.useraccountbox .usernameandprofile h3 {
+    color: #4e4c23;
+    letter-spacing: .5px;
+    font-family: 'poppins';
+}
+
+.useraccountbox .usernameandprofile h5 {
+    color: #4e4c23;
+    margin-top: -20px;
+    letter-spacing: .5px;
+    font-family: 'poppins';
+}
+
+
+
+
+
+/* Account box UI started */
+
+.useraccountbox .makeaccount {
+    width: 370px;
+    height: 350px;
+    margin: auto;
+    margin-top: 30px;
+    border-radius: 25px;
+    background: #F9FBF7;
+
+}
+
+
+
+.loginsignupbox {
+    display: none;
+    width: 337.5px;
+    height: max-content;
+    position: absolute;
+    top: 120px;
+    right: 460px;
+    z-index: 1000;
+    margin: auto;
+    border-radius: 25px;
+    background: #88937e;
+}
+
+.loginsignupbox .topsidebtns {
+    width: max-content;
+    height: 45px;
+    color: white;
+    cursor: pointer;
+    margin-top: 30px;
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 4px solid #323232;
+    background: #323232;
+    font-family: 'poppins';
+}
+
+
+
+.loginsignupbox .form-container {
+    height: 380px;
+    width: 330px;
+    padding-bottom: 25px;
+    background: #F9FBF7;
+    border-radius: 25px;
+    margin-top: 20px;
+    border: 4px solid #4e4c23;
+}
+
+.loginsignupbox .form-container h2 {
+    color: #4e4c23;
+    letter-spacing: .5px;
+    font-family: 'poppins';
+}
+
+.loginsignupbox .form-container input {
+    width: 250px;
+    height: 40px;
+    border: none;
+    margin-top: 10px;
+    outline: none;
+    font-size: 15px;
+    border-bottom: 1px solid black;
+    padding-left: 20px;
+    background: transparent;
+    font-family: 'poppins';
+}
+
+.loginsignupbox .form-container .loginsignupbtn {
+    width: 150px;
+    height: 40px;
+    color: white;
+    cursor: pointer;
+    margin-top: 30px;
+    border-radius: 20px;
+    border: 4px solid #323232;
+    background: #323232;
+    font-family: 'poppins';
+}
+
+.loginsignupbox .form-container .loginsignupbtn:hover {
+    border: 4px solid #3e3e3e;
+    background: #3e3e3e;
+}
+
+
+
+
+
+
+.trendingtopics {
+    display: flex;
+    width: 1280px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 90px;
+    font-family: "Poppins";
+}
+
+.trendingtopics button {
+    width: max-content;
+    height: 45px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-right: 25px;
+    border-radius: 25px;
+    background: #E9E4D8;
+    font-weight: bolder;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    color: black;
+    border: none;
+    transition: .3s ease-in-out;
+    font-family: "poppins", sans-serif;
+}
+
+.trendingtopics button:hover {
+    background: #f05a49;
+    transition: .3s ease-in-out;
+    color: white;
+    box-shadow: 0px 5px 200px 6px #ff908d;
+}
+
+
+
+
+/* Main Post CSS Starts From Here ! */
+
+.verticlelinebreak {
+    width: .5px;
+    height: 540px;
+    margin-bottom: -570.5px;
+    background: #000;
+}
+
+.latestpostsection {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    width: 90%;
+    height: 500px;
+    margin-top: 30px;
+    font-weight: 900;
+    padding-bottom: 30px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.latestpostsection .latestpost {
+    box-sizing: border-box;
+    width: 635px;
+    /* height: max-content; */
+    height: 250px;
+    margin-left: 23px;
+    padding-top: 20px;
+    padding-bottom: 25px;
+    background: transparent;
+    z-index: 100;
+    text-align: left;
+    border-bottom: 1px solid black;
+}
+
+.latestpostsection .latestpost a {
+    outline: none;
+    text-decoration: none;
+    color: black;
+}
+
+.latestpostsection .latestpost .authordetails {
+    width: 100%;
+    height: 40px;
+    margin-left: 280px;
+    margin-top: -170px;
+    display: flex;
+    align-items: center;
+}
+
+.latestpostsection .latestpost .authordetails .authorprofile {
+    width: 35px;
+    height: 35px;
+    display: none;
+    border-radius: 50%;
+    border: 2px solid black;
+}
+
+.latestpostsection .latestpost .authordetails .authorname {
+    color: black;
+    font-weight: 500;
+    /* margin-left: 15px; */
+    font-size: 18px;
+}
+
+.latestpostsection .latestpost .authordetails .timestampdisplay {
+    font-size: 16px;
+    font-weight: 500;
+    color: grey;
+    margin-left: 8px;
+}
+
+.latestpostsection .latestpost .postheading {
+    font-size: 16px;
+    margin-left: 280px;
+    margin-top: 5px;
+    font-weight: 900;
+    width: 350px;
+    height: 48px;
+}
+
+.latestpostsection .latestpost .sometextofpost {
+    margin-top: -8px;
+    margin-left: 280px;
+    text-align: justify;
+    hyphens: auto;
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: .5px;
+    width: 350px;
+    height: 60px;
+    overflow: hidden;
+    font-family: "Poppins", sans-serif;
+}
+
+.latestpostsection .latestpost .banner {
+    height: 160px;
+    width: 250px;
+    border-radius: 20px;
+}
+
+.latestpostsection .latestpost .allbuttons {
+    width: 635px;
+    display: flex;
+    margin-top: 17.5px;
+}
+
+.latestpostsection .latestpost .allbuttons button {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    font-size: 15px;
+    cursor: pointer;
+    border: none;
+    margin-right: 10px;
+    border-radius: 50%;
+    background: #E9E4D8;
+    align-items: center;
+    justify-content: center;
+    transition: .4s ease-in-out;
+}
+
+.latestpostsection .latestpost .allbuttons .viewers {
+    width: max-content;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 20px;
+    /* margin-left: 380px; */
+}
+
+.latestpostsection .latestpost .allbuttons .linkofblog .gotoblogbutton {
+    width: 40px;
+    height: 40px;
+    width: max-content;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 20px;
+    font-size: 15px;
+    color: #000;
+    float: right;
+    /* margin-left: 390px; */
+    transition: .4s ease-in-out;
+}
+
+.latestpostsection .latestpost .allbuttons .linkofblog .gotoblogbutton:hover {
+    color: #f05a49;
+    transition: .4s ease-in-out;
+}
+
+.latestpostsection .latestpost .allbuttons .linkofblog .gotoblogbutton i {
+    margin-top: 1.7px;
+}
+
+
+
+.notification-access {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    font-family: 'poppins';
+}
+
+.notification-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 380px;
+    height: 480px;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border-radius: 30px;
+    background-color: #fff1ef;
+    padding: 20px;
+    color: black;
+}
+
+.notification-content hr {
+    width: 78%;
+}
+
+.notification-content h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    margin-top: 26px;
+    margin-left: -90px;
+}
+
+.notification-content p {
+    font-size: 16px;
+    width: 303px;
+    font-weight: bold;
+    text-align: left;
+    margin-top: 0px;
+}
+
+.notification-content .closebutton {
+    color: salmon;
+    border: none;
+    cursor: pointer;
+    font-size: 25px;
+    position: absolute;
+    right: 50px;
+    top: 53px;
+    background: transparent;
+}
+
+.notification-content #allow-notifications {
+    padding: 15px 30px;
+    color: black;
+    border: none;
+    border-radius: 20px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 25px;
+    font-weight: 900;
+    font-family: 'quicksand';
+    background: #FEB3B0;
+}
+
+
+
+
+
+
+.baoat{
+    font-size: 55px;
+    margin-bottom: 1cm;
+    font-family: 'caveat' , sans-serif;
+}
+
+.authorsbox {
+    width: 90%;
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding-top: 2cm;
+    border-top: 2px solid black;
+    font-family: 'poppins' , sans-serif;
+}
+
+.authorsbox .authorprofilebox{
+    box-sizing: border-box;
+    width: 370px;
+    height: 180px;
+    border-radius: 10px;
+    margin: auto;
+    margin-bottom: 2.5cm;
+    border: 3px solid #4e4c23;
+}
+
+.authorprofilebox .authorprofileimage {
+    width: 60px;
+    height: 60px;
+    float: left;
+    border-radius: 50%;
+    margin-top: 16px;
+    margin-left: 16px;
+    border: 4px solid #9b81c5;
+}
+
+.authorprofilebox .authornameanddescdisplay {
+    width: 400px;
+    height: 260px;
+    letter-spacing: .5px;
+    font-family: 'poppins';
+}
+
+.authorprofilebox .authornameanddescdisplay h2 {
+    color: #4e4c23;
+    width: 250px;
+    font-size: 25px;
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 55px;
+}
+
+.authorprofilebox .authornameanddescdisplay p {
+    color: #4e4c23;
+    margin-left: 102.5px;
+    margin-top: -21px;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: left;
+    overflow-y: hidden;
+}
+
+.authorsbox .authorprofilebox .authornameanddescdisplay button{
+    height: 50px;
+    font-size: 18px;
+    float: left;
+    border-radius: 30px;
+    margin-left: 20px;
+    margin-top: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    width: max-content;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-weight: bolder;
+    font-family: 'poppins';
+}
+
+.authorsbox .authorprofilebox .authornameanddescdisplay .followauthorbtn{  
+    background: indianred;
+}
+
+.authorsbox .authorprofilebox .authornameanddescdisplay .gotoauthorprofile{
+    color: #323232;
+    background: #e8dbbd;
+}
+
+
+
+
+
+
+.hrline {
+    width: 90%;
+    height: 1.5px;
+    border-radius: 10px;
+    background: black;
+}
+
+.copyright {
+    color: black;
+    font-size: 15px;
+    font-weight: 900;
+    font-family: 'poppins';
+}
+
+.bharatflag {
+    width: 25px;
+    margin-bottom: -3px;
+    margin-right: 6px;
+}
+
+.copyrighticon {
+    width: 16px;
+    margin-bottom: -2.5px;
+    margin-right: 6px;
+}

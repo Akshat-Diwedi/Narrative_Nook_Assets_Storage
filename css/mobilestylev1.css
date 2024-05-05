@@ -1,0 +1,796 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    color: #242424;
+    background: #F5F3EF;
+}
+
+.pagelinebreak {
+    width: 95%;
+    margin-top: 20px;
+
+}
+
+.pagelinebreak .inducedlines {
+    height: 1px;
+    width: 100%;
+    margin-bottom: 3.5px;
+    background: #000;
+}
+
+
+.mandalabackground {
+    position: absolute;
+    top: 120px;
+    left: 9%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    z-index: -1;
+}
+
+
+
+
+.topbar {
+    width: 100%;
+    font-family: 'Cinzel Decorative', serif;
+}
+
+.topbar .logoname {
+    position: absolute;
+    left: 50px;
+    top: 20px;
+    font-size: 27px;
+    font-family: 'Cinzel Decorative', serif;
+}
+
+.topbar .topbarbuttonbox {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-top: 15px;
+}
+
+
+.topbar .topbarbuttonbox .accountboxtrigger {
+    width: 130px;
+    height: 46px;
+    border: none;
+    margin: auto;
+    font-size: 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+    background: #E9E4D8;
+    font-family: "poppins";
+}
+
+
+.topbar .topbarbuttonbox .crown {
+    /* width: 46px;
+    height: 46px;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    display: flex; */
+    display: none;
+    /* cursor: pointer;
+    margin-top: -48px;
+    background: #E9E4D8;
+    border-radius: 50%; */
+}
+
+/* .topbar .topbarbuttonbox .crown img {
+    width: 35px;
+    height: 35px;
+    border: none;
+    margin-top: -2px;
+    border-radius: 50%;
+} */
+
+.topbar .searchbox {
+    width: max-content;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+    margin-left: -10px;
+}
+
+.topbar .postsearch {
+    width: 250px;
+    height: 45px;
+    border: none;
+    outline: none;
+    letter-spacing: .7px;
+    border-radius: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    /* margin-left: -70px; */
+    background: #E9E4D8;
+    font-family: 'poppins', sans-serif;
+    font-weight: bolder;
+    color: black;
+}
+
+.topbar .searchpostbtn {
+    width: 45px;
+    height: 45px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    color: black;
+    font-size: 18px;
+    background: #E9E4D8;
+    margin-left: -55px;
+    margin-top: -2.3px;
+    border-radius: 50%;
+}
+
+.topbar .searchpostbtn i {
+    margin-top: 5px;
+}
+
+
+.searchresults {
+    display: none;
+    width: 300px;
+    height: 300px;
+    overflow-y: scroll;
+    margin-top: 160px;
+    z-index: 2;
+    border: 1px solid #fa807254;
+    border-radius: 20px;
+    font-family: 'poppins', sans-serif;
+    color: #000;
+    background: #ede8de;
+    backdrop-filter: blur(4px);
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.searchresults .searchinstruction {
+    text-align: justify;
+    hyphens: auto;
+    width: 200px;
+    margin-top: 70px;
+    letter-spacing: 1px;
+    font-size: 15px;
+}
+
+.searchresults .post {
+    width: 90%;
+    height: 145px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    /* border: 2px solid black; */
+    border-bottom: 2px solid red;
+}
+
+.searchresults .post h2 {
+    float: left;
+    margin-left: 7px;
+    text-align: left;
+    font-size: 18px;
+}
+
+.searchresults .post button {
+    width: 80px;
+    height: 40px;
+    border: 1px solid black;
+    color: black;
+    cursor: pointer;
+    float: right;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 25px;
+    font-weight: bolder;
+    letter-spacing: 1.5px;
+    background: #E9E4D8;
+    transition: .3s ease-in-out;
+    font-family: "poppins", sans-serif;
+}
+
+
+
+
+
+.useraccountbox {
+    width: 335px;
+    height: 335px;
+    display: none;
+    margin-top: 45px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 25px;
+    background: #F5F3EF;
+    border: 3px solid #4e4c23;
+}
+
+.useraccountbox .closeuseraccountboxbtn {
+    position: absolute;
+    right: 40px;
+    top: 155px;
+    font-size: 15px;
+    background: transparent;
+    height: 45px;
+    width: max-content;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #ce4242;
+    cursor: pointer;
+    border: 2px solid #c5c0b4;
+    background: #E9E4D8;
+    border-radius: 15px;
+}
+
+.useraccountbox .openloginsignupboxbtn {
+    position: absolute;
+    left: 40px;
+    top: 155px;
+    width: max-content;
+    height: 45px;
+    color: white;
+    cursor: pointer;
+    border-radius: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 14px;
+    border: 4px solid #323232;
+    background: #323232;
+    font-family: 'poppins';
+}
+
+.useraccountbox .accountcreatedinfo {
+    display: none;
+    margin-top: 50px;
+    width: 230px;
+    text-align: justify;
+    hyphens: auto;
+    font-family: "Cinzel Decorative";
+}
+
+.useraccountbox .usernameandprofile {
+    width: 310px;
+    height: 70px;
+    margin: auto;
+    margin-top: 30px;
+    border-radius: 20px;
+    background: #F9FBF7;
+    box-shadow: .5px .5px 20px .5px rgba(0, 0, 0, .14);
+}
+
+.useraccountbox .usernameandprofile img {
+    width: 45px;
+    height: 45px;
+    float: left;
+    border-radius: 50%;
+    margin-top: 10px;
+    margin-left: 10px;
+    border: 3px solid #eaeade;
+}
+
+.useraccountbox .usernameandprofile .usernameandemaildisplay {
+    width: 220px;
+    height: 70px;
+    margin-left: 70px;
+    position: relative;
+    top: 16px;
+    font-family: 'poppins';
+    /* border: 2px solid #F9FBF7; */
+}
+
+.useraccountbox .usernameandprofile h3 {
+    color: #4e4c23;
+    font-size: 16px;
+    letter-spacing: .5px;
+}
+
+.useraccountbox .usernameandprofile h5 {
+    color: #4e4c23;
+    font-size: 10px;
+    margin-top: -17px;
+    letter-spacing: .5px;
+}
+
+
+
+
+
+/* Account box UI started */
+
+.useraccountbox .makeaccount {
+    width: 370px;
+    height: 350px;
+    margin: auto;
+    margin-top: 30px;
+    border-radius: 25px;
+    background: #F9FBF7;
+
+}
+
+
+
+.loginsignupbox {
+    display: none;
+    width: 335px;
+    height: max-content;
+    position: absolute;
+    top: 40px;
+    left: 11px;
+    margin: auto;
+    z-index: 3;
+    margin: auto;
+    border-radius: 25px;
+    background: #88937e;
+}
+
+.loginsignupbox .topsidebtns {
+    width: max-content;
+    height: 45px;
+    color: white;
+    cursor: pointer;
+    margin-top: 30px;
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 4px solid #323232;
+    background: #323232;
+    font-family: 'poppins';
+}
+
+
+
+.loginsignupbox .form-container {
+    height: 380px;
+    width: 330px;
+    padding-bottom: 25px;
+    background: #F9FBF7;
+    border-radius: 25px;
+    margin-top: 20px;
+    border: 4px solid #4e4c23;
+}
+
+.loginsignupbox .form-container h2 {
+    color: #4e4c23;
+    letter-spacing: .5px;
+    font-family: 'poppins';
+}
+
+.loginsignupbox .form-container input {
+    width: 250px;
+    height: 40px;
+    border: none;
+    margin-top: 10px;
+    outline: none;
+    font-size: 15px;
+    border-bottom: 1px solid black;
+    padding-left: 20px;
+    background: transparent;
+    font-family: 'poppins';
+}
+
+.loginsignupbox .form-container .loginsignupbtn {
+    width: 150px;
+    height: 40px;
+    color: white;
+    cursor: pointer;
+    margin-top: 30px;
+    border-radius: 20px;
+    border: 4px solid #323232;
+    background: #323232;
+    font-family: 'poppins';
+}
+
+.loginsignupbox .form-container .loginsignupbtn:hover {
+    border: 4px solid #3e3e3e;
+    background: #3e3e3e;
+}
+
+
+
+
+
+
+
+
+
+.trendingtopics {
+    width: 85%;
+    margin-top: -30px;
+    float: center;
+    padding-left: 5px;
+    padding-right: 15px;
+    border-top: 1px solid black;
+    font-family: "Poppins", sans-serif;
+}
+
+.trendingtopics button {
+    width: max-content;
+    height: 45px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-right: 5px;
+    border-radius: 25px;
+    margin-bottom: 15px;
+    background: #E9E4D8;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    color: black;
+    border: none;
+    transition: .1s ease-in-out;
+    font-family: "poppins", sans-serif;
+}
+
+.trendingtopics button:hover {
+    background: #f05a49;
+    transition: .1s ease-in-out;
+    color: white;
+    box-shadow: 0px 5px 150px 6px #ff908d;
+}
+
+
+/* Main Post CSS Starts From Here ! */
+
+
+.latestpostsection {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px;
+    width: 100%;
+    margin-top: 50px;
+    font-weight: 900;
+    margin-left: 3.6%;
+    padding-bottom: 30px;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.latestpostsection .latestpost {
+    box-sizing: border-box;
+    width: 335px;
+    height: 550px;
+    border-radius: 20px;
+    background: transparent;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    border: 2px solid rgb(200, 200, 200);
+    /* box-shadow: 2px 5px 50px 2px rgba(0, 0, 0, .14); */
+}
+
+.latestpostsection .latestpost a {
+    outline: none;
+    text-decoration: none;
+    color: black;
+}
+
+.latestpostsection .latestpost .authordetails {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: -170px;
+}
+
+.latestpostsection .latestpost .authordetails .authorprofile {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid black;
+}
+
+.latestpostsection .latestpost .authordetails .authorname {
+    color: black;
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+.latestpostsection .latestpost .authordetails .timestampdisplay {
+    font-size: 16px;
+    color: grey;
+    margin-left: 7px;
+}
+
+.latestpostsection .latestpost .postheading {
+    margin-top: 210px;
+    font-size: 18px;
+    margin-left: -3px;
+    font-weight: 900;
+    width: 283px;
+    position: relative;
+    top: -170px;
+    text-align: left;
+}
+
+.latestpostsection .latestpost .sometextofpost {
+    margin-top: 10px;
+    margin-left: -3px;
+
+    text-align: justify;
+    hyphens: auto;
+
+    font-size: 14px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 900;
+    letter-spacing: .5px;
+    width: 283px;
+    height: 130px;
+    overflow: hidden;
+    position: relative;
+    top: -175px;
+}
+
+
+.latestpostsection .latestpost .banner {
+    height: 170px;
+    width: 290px;
+    position: relative;
+    top: 70px;
+    border-radius: 15px;
+}
+
+.latestpostsection .latestpost .allbuttons {
+    width: 281px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    margin-top: -177px;
+    margin-left: -5px;
+}
+
+.latestpostsection .latestpost .allbuttons button {
+    height: 40px;
+    display: flex;
+    font-size: 15px;
+    border: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    background: #E9E4D8;
+    align-items: center;
+    justify-content: center;
+    transition: .4s ease-in-out;
+}
+
+
+.latestpostsection .latestpost .allbuttons .viewers {
+    width: max-content;
+    margin-right: 15px;
+    border-radius: 20px;
+}
+
+.latestpostsection .latestpost .allbuttons .linkofblog .gotoblogbutton {
+    border-radius: 20px;
+    width: max-content;
+    font-size: 15px;
+    cursor: pointer;
+    color: #000;
+}
+
+.latestpostsection .latestpost .allbuttons .linkofblog .gotoblogbutton:hover {
+    color: #f05a49;
+    transition: .4s ease-in-out;
+}
+
+.latestpostsection .latestpost .allbuttons .linkofblog .gotoblogbutton i {
+    margin-top: 1.7px;
+}
+
+
+
+
+
+
+.notification-access {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 4;
+    font-family: 'poppins';
+}
+
+.notification-content {
+    position: absolute;
+    top: 47%;
+    left: 48%;
+    width: 300px;
+    height: 480px;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    border-radius: 25px;
+    background-color: #fff1ef;
+    padding: 20px;
+    color: black;
+}
+
+.notification-content hr {
+    width: 97.5%;
+}
+
+.notification-content h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: -90px;
+}
+
+.notification-content p {
+    font-size: 16px;
+    width: 280px;
+    text-align: justify;
+    hyphens: auto;
+    margin-top: 5px;
+}
+
+.notification-content .closebutton {
+    color: salmon;
+    border: none;
+    cursor: pointer;
+    font-size: 22px;
+    position: absolute;
+    right: 35px;
+    top: 33.5px;
+    background: transparent;
+}
+
+.notification-content #allow-notifications {
+    padding: 15px 30px;
+    color: black;
+    border: none;
+    border-radius: 20px;
+    font-size: 15px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-family: 'poppins';
+    background: #FEB3B0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.baoat {
+    font-size: 30px;
+    font-family: 'caveat', sans-serif;
+}
+
+.authorsbox {
+    width: 90%;
+    margin-bottom: 30px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    padding-top: 1cm;
+    border-top: 2px solid black;
+    font-family: 'poppins', sans-serif;
+}
+
+.authorsbox .authorprofilebox {
+    box-sizing: border-box;
+    width: 325px;
+    height: 155px;
+    border-radius: 10px;
+    /* margin: auto; */
+    margin-bottom: 1cm;
+    border: 3px solid #4e4c23;
+}
+
+.authorprofilebox .authorprofileimage {
+    width: 50px;
+    height: 50px;
+    float: left;
+    border-radius: 50%;
+    margin-top: 16px;
+    margin-left: 16px;
+    border: 3px solid rgb(252, 168, 168);
+}
+
+.authorprofilebox .authornameanddescdisplay {
+    width: 315px;
+    height: 170px;
+    letter-spacing: .5px;
+    font-family: 'poppins';
+}
+
+.authorprofilebox .authornameanddescdisplay h2 {
+    color: #4e4c23;
+    width: 250px;
+    font-size: 19px;
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 80px;
+}
+
+.authorprofilebox .authornameanddescdisplay p {
+    color: #4e4c23;
+    margin-left: 80px;
+    margin-top: -18px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: left;
+    overflow-y: hidden;
+}
+
+.authorsbox .authorprofilebox .authornameanddescdisplay button {
+    height: 50px;
+    width: max-content;
+    font-size: 15px;
+    float: left;
+    border-radius: 30px;
+    margin-top: 7px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-weight: bolder;
+    font-family: 'poppins';
+    margin-left: 16px;
+}
+
+.authorsbox .authorprofilebox .authornameanddescdisplay .followauthorbtn {
+    background: indianred;
+}
+
+.authorsbox .authorprofilebox .authornameanddescdisplay .gotoauthorprofile {
+    color: #323232;
+    background: #e8dbbd;
+}
+
+
+
+
+
+
+.hrline {
+    width: 90%;
+    height: 1px;
+    border-radius: 10px;
+    background: black;
+}
+
+.copyright {
+    color: black;
+    width: 90%;
+    text-align: justify;
+    hyphens: auto;
+    font-size: 15px;
+    font-weight: 900;
+    font-family: 'poppins';
+}
+
+.bharatflag {
+    width: 25px;
+    margin-bottom: -3px;
+    margin-right: 6px;
+}
+
+.copyrighticon {
+    width: 16px;
+    margin-bottom: -2.5px;
+    margin-right: 6px;
+}

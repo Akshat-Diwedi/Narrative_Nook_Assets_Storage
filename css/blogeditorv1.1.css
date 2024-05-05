@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
 
 body {
     margin: 0;
@@ -10,20 +11,11 @@ body {
     font-family: "poppins", sans-serif;
 }
 
-
 @font-face {
-    font-family: 'quicksand';
-    src: url('fonts/quicksand.ttf');
-}
-
-@font-face {
-    font-family: 'gilroylight';
-    src: url('../fonts/Gilroy-LightItalic.ttf');
-}
-
-@font-face {
-    font-family: 'gilroybold';
-    src: url('../fonts/Gilroy-Bold.ttf');
+    font-family: 'Hellix';
+    src: url('https://cdn.jsdelivr.net/gh/Nuclear-Games/Narrative_Nook_Assets_Storage@main/fonts/Hellix-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 ::-webkit-scrollbar {
@@ -67,7 +59,7 @@ h2 {
     cursor: pointer;
     border: 2px solid #f69ebc;
     background: #ffffff1b;
-    font-family: 'gilroybold';
+    font-family: 'Hellix';
     position: absolute;
     right: 50px;
     top: 20px;

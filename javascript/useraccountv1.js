@@ -28,10 +28,12 @@ toggleBtn.addEventListener("click", function () {
 
 function openaccountpanel() {
     document.querySelector('.useraccountbox').style.display = "block";
+    document.querySelector('.accountboxtrigger').style.display = "none";
 }
 
 function closeaccountpanel() {
     document.querySelector('.useraccountbox').style.display = "none";
+    document.querySelector('.accountboxtrigger').style.display = "block";
 }
 
 function openloginsignupbox() {
@@ -98,6 +100,7 @@ document.getElementById("signup-btn").addEventListener("click", function (event)
             localStorage.setItem('emailofuser', email);
             localStorage.setItem('profilepic', profilePicBase64);
             localStorage.setItem('userCode', userId);
+
             window.location.href = "index.html";
         }).catch(function (error) {
             alert("Error creating account: ", error)
@@ -121,6 +124,24 @@ if (localStorage.getItem("nameofuser")) {
 if (localStorage.getItem("emailofuser")) {
     useremaildisplay.innerText = localStorage.getItem("emailofuser");
 }
+
+
+
+
+
+
+// This code is not permanent so try to create features ASAP !
+
+const usernameshouldbetheretoshowmsg = localStorage.getItem("nameofuser");
+
+if (usernameshouldbetheretoshowmsg){
+    document.querySelector('.accountcreatedinfo').style.display = "block";
+} else {
+    document.querySelector('.accountcreatedinfo').style.display = "none";
+}
+
+// This code is not permanent so try to create features ASAP !
+
 
 
 

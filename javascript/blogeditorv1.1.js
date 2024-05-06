@@ -48,9 +48,11 @@ function updateIframeContent() {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta property="type" content="article">
         <meta name="keywords" content="${keywords.value} , narrative nook">
         <meta name="description" content="${description.value}">
-        <meta name="robots" content="INDEX, FOLLOW">
+        <meta name="robots" content="index, follow">
+        <meta name="author" content="${authorNameInput.value}">
     
         <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
         <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-storage.js"></script>
@@ -137,7 +139,7 @@ function updateIframeContent() {
             </center>
     
             <center>
-                <p id="mainblogcontent">${mainBlogContentTextarea.value}</p>
+                <div id="mainblogcontent">${mainBlogContentTextarea.value}</div>
             </center>
     
             <div class="hrline"></div>

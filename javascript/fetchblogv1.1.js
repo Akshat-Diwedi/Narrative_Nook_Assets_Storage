@@ -44,7 +44,7 @@ function fetchAndDisplayRecentFiles() {
                     console.log(formattedDate);
                     const timestampdisplay = document.createElement('p');
                     timestampdisplay.className = 'timestampdisplay';
-                    timestampdisplay.innerText = "▪ " + formattedDate || '';
+                    timestampdisplay.innerText = "• " + formattedDate || '';
 
 
 
@@ -131,7 +131,7 @@ function getFirst40Words(text) {
         return '';
     }
     const words = text.split(' ');
-    const first40Words = words.slice(0, 40).join(' ') + " . . .";
+    const first40Words = words.slice(0, 25).join(' ') + " . . .";
     return first40Words;
 }
 

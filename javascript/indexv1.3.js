@@ -3,7 +3,7 @@ function checkWidthAndStyle() {
   if (document.body.offsetWidth > 500) {
     link.setAttribute('href', 'https://cdn.jsdelivr.net/gh/Nuclear-Games/Narrative_Nook_Assets_Storage@main/css/stylev1.css');
   } else if (document.body.offsetWidth <= 500) {
-    link.setAttribute('href', 'https://cdn.jsdelivr.net/gh/Nuclear-Games/Narrative_Nook_Assets_Storage@main/css/mobilestylev1.1.css');
+    link.setAttribute('href', 'https://cdn.jsdelivr.net/gh/Nuclear-Games/Narrative_Nook_Assets_Storage@main/css/mobilestylev1.2.css');
   } else {
     console.log("Something went wrong!");
   }

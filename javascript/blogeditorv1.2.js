@@ -9,7 +9,7 @@ var publishingDateInput = document.getElementById('publishingdate');
 var mainBlogContentTextarea = document.getElementById('mainblogcontentortext');
 var blogtextconclusion = document.getElementById('blogtextconclusion');
 
-var selectedOptionText = '';
+var selectedOptionText = '# '+ '';
 var base64Url = '';
 
 function convertToBase64() {
@@ -166,8 +166,7 @@ function updateIframeContent() {
             <div class="hrline"></div><br><br>
             <h3 class="tagstextalignment">Tags :</h3>
             <div class="tagsanddirectorydiv">
-                <button class="tagbutton"><span class="hash" style="color:salmon;">#
-                    </span>&nbsp;${selectedOptionText}</button>
+                <button class="tagbutton">${selectedOptionText}</button>
             </div>
     
     

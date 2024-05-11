@@ -237,7 +237,7 @@ body {
     width: 400px;
     height: 550px;
     border-radius: 25px;
-    z-index: 20;
+    z-index: 99;
     background: #F5F3EF;
     border: 4px solid #4e4c23;
 }
@@ -485,13 +485,11 @@ body {
 .latestpostsection .latestpost {
     box-sizing: border-box;
     width: 635px;
-    /* height: max-content; */
     height: 250px;
     margin-left: 23px;
     padding-top: 20px;
     padding-bottom: 25px;
     background: transparent;
-    z-index: 100;
     text-align: left;
     border-bottom: 1px solid black;
 }

@@ -12,10 +12,16 @@ body {
     background: #F5F3EF;
 }
 
+@font-face {
+    font-family: 'Hellix';
+    src: url('https://cdn.jsdelivr.net/gh/Nuclear-Games/Narrative_Nook_Assets_Storage@main/fonts/Hellix-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .pagelinebreak {
     width: 95%;
     margin-top: 20px;
-
 }
 
 .pagelinebreak .inducedlines {
@@ -549,7 +555,7 @@ body {
     height: 40px;
     display: flex;
     align-items: center;
-    margin-top: -205px;
+    margin-top: -177px;
     margin-left: -5px;
 }
 
@@ -610,10 +616,10 @@ body {
 .notification-content {
     position: absolute;
     top: 47%;
-    left: 48%;
+    left: 47%;
+    transform: translate(-50%, -50%);
     width: 300px;
     height: 480px;
-    transform: translate(-50%, -50%);
     text-align: center;
     border-radius: 25px;
     background-color: #fff1ef;
@@ -674,10 +680,46 @@ body {
 
 
 
-.baoat {
-    font-size: 30px;
+.bestauthorofalltimetoheadingdiv {
+    display: none;
+}
+
+.bestauthorofalltimetoheadingdivmobileversion {
+    display: block;
+    text-align: center;
+    height: 150px;
+    margin-bottom: .5cm;
+}
+
+.line1ofheading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.line1ofheading .baoathellix {
+    font-size: 35px;
+    color: black;
+    font-family: "Hellix";
+}
+
+.line1ofheading .baoat {
+    font-size: 40px;
+    margin-top: 20px;
+    margin-left: 10px;
+    color: indianred;
     font-family: 'caveat', sans-serif;
 }
+
+.baoathellixouterside {
+    font-size: 35px;
+    color: #8330C2;
+    position: relative;
+    top: -40px;
+    font-family: "Hellix";
+}
+
 
 .authorsbox {
     width: 90%;
@@ -691,27 +733,36 @@ body {
 
 .authorsbox .authorprofilebox {
     box-sizing: border-box;
-    width: 325px;
-    height: 155px;
-    border-radius: 10px;
-    /* margin: auto; */
+    width: 310px;
+    height: 420px;
+    margin: auto;
     margin-bottom: 1cm;
-    border: 3px solid #4e4c23;
+    border-radius: 30px;
+    border: 3px solid #000;
+}
+
+.authorsbox .authorprofilebox .simpletopback{
+    width: 99%;
+    float: center;
+    height: 120px;
+    border-radius: 28.6px 28.6px 30px 30px;
+    background: #fee1dc;
 }
 
 .authorprofilebox .authorprofileimage {
-    width: 50px;
-    height: 50px;
-    float: left;
+    width: 100px;
+    height: 100px;
+    float: center;
     border-radius: 50%;
-    margin-top: 16px;
-    margin-left: 16px;
-    border: 3px solid rgb(252, 168, 168);
+    margin-top: -57px;
+    border: 4px solid #9b81c5;
 }
 
+
 .authorprofilebox .authornameanddescdisplay {
-    width: 315px;
-    height: 170px;
+    width: 100%;
+    height: max-content;
+    text-align: center;
     letter-spacing: .5px;
     font-family: 'poppins';
 }
@@ -719,44 +770,41 @@ body {
 .authorprofilebox .authornameanddescdisplay h2 {
     color: #4e4c23;
     width: 250px;
-    font-size: 19px;
-    text-align: left;
-    margin-top: 20px;
-    margin-left: 80px;
+    font-size: 25px;
+    text-align: center;
+    margin-top: 10px;
 }
 
 .authorprofilebox .authornameanddescdisplay p {
     color: #4e4c23;
-    margin-left: 80px;
-    margin-top: -18px;
+    margin-top: -21px;
+    margin-bottom: 15px;
     font-size: 12px;
     font-weight: bold;
-    text-align: left;
+    text-align: center;
     overflow-y: hidden;
 }
 
-.authorsbox .authorprofilebox .authornameanddescdisplay button {
+.authorsbox .authorprofilebox .authornameanddescdisplay button{
     height: 50px;
-    width: max-content;
-    font-size: 15px;
-    float: left;
+    width: 220px;
+    font-size: 18px;
     border-radius: 30px;
-    margin-top: 7px;
-    padding-left: 25px;
-    padding-right: 25px;
+    margin-top: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
     border: none;
     color: white;
     cursor: pointer;
     font-weight: bolder;
     font-family: 'poppins';
-    margin-left: 16px;
 }
 
-.authorsbox .authorprofilebox .authornameanddescdisplay .followauthorbtn {
-    background: indianred;
+.authorsbox .authorprofilebox .authornameanddescdisplay .followauthorbtn{  
+    background: #000;
 }
 
-.authorsbox .authorprofilebox .authornameanddescdisplay .gotoauthorprofile {
+.authorsbox .authorprofilebox .authornameanddescdisplay .gotoauthorprofile{
     color: #323232;
     background: #e8dbbd;
 }

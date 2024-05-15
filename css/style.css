@@ -11,7 +11,12 @@ body {
     background-color: #F5F3EF;
 }
 
-
+@font-face {
+    font-family: 'Hellix';
+    src: url('https://cdn.jsdelivr.net/gh/Nuclear-Games/Narrative_Nook_Assets_Storage@main/fonts/Hellix-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 ::-webkit-scrollbar {
     width: 5px;
@@ -236,8 +241,8 @@ body {
     right: 25px;
     width: 400px;
     height: 550px;
-    border-radius: 25px;
     z-index: 99;
+    border-radius: 25px;
     background: #F5F3EF;
     border: 4px solid #4e4c23;
 }
@@ -485,6 +490,7 @@ body {
 .latestpostsection .latestpost {
     box-sizing: border-box;
     width: 635px;
+    /* height: max-content; */
     height: 250px;
     margin-left: 23px;
     padding-top: 20px;
@@ -686,19 +692,36 @@ body {
 
 
 
+.bestauthorofalltimetoheadingdivmobileversion{
+    display: none;
+}
 
+.bestauthorofalltimetoheadingdiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .baoat{
     font-size: 55px;
     margin-bottom: 1cm;
+    color: indianred;
     font-family: 'caveat' , sans-serif;
 }
+
+.baoathellix{
+    font-size: 50px;
+    margin-bottom: 1cm;
+    font-family: "Hellix";
+}
+
+
 
 .authorsbox {
     width: 90%;
     margin-bottom: 30px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     padding-top: 2cm;
     border-top: 2px solid black;
     font-family: 'poppins' , sans-serif;
@@ -706,27 +729,35 @@ body {
 
 .authorsbox .authorprofilebox{
     box-sizing: border-box;
-    width: 370px;
-    height: 180px;
-    border-radius: 10px;
+    width: 310px;
+    height: 420px;
     margin: auto;
     margin-bottom: 2.5cm;
-    border: 3px solid #4e4c23;
+    border-radius: 30px;
+    border: 3px solid #000;
+}
+
+.authorsbox .authorprofilebox .simpletopback{
+    width: 99%;
+    float: center;
+    height: 120px;
+    border-radius: 28.6px 28.6px 30px 30px;
+    background: #fee1dc;
 }
 
 .authorprofilebox .authorprofileimage {
-    width: 60px;
-    height: 60px;
-    float: left;
+    width: 100px;
+    height: 100px;
+    float: center;
     border-radius: 50%;
-    margin-top: 16px;
-    margin-left: 16px;
+    margin-top: -57px;
     border: 4px solid #9b81c5;
 }
 
 .authorprofilebox .authornameanddescdisplay {
-    width: 400px;
-    height: 260px;
+    width: 100%;
+    height: max-content;
+    text-align: center;
     letter-spacing: .5px;
     font-family: 'poppins';
 }
@@ -735,31 +766,28 @@ body {
     color: #4e4c23;
     width: 250px;
     font-size: 25px;
-    text-align: left;
-    margin-top: 20px;
-    margin-left: 55px;
+    text-align: center;
+    margin-top: 10px;
 }
 
 .authorprofilebox .authornameanddescdisplay p {
     color: #4e4c23;
-    margin-left: 102.5px;
     margin-top: -21px;
-    font-size: 13px;
+    margin-bottom: 15px;
+    font-size: 12px;
     font-weight: bold;
-    text-align: left;
+    text-align: center;
     overflow-y: hidden;
 }
 
 .authorsbox .authorprofilebox .authornameanddescdisplay button{
     height: 50px;
+    width: 200px;
     font-size: 18px;
-    float: left;
     border-radius: 30px;
-    margin-left: 20px;
-    margin-top: 20px;
+    margin-top: 15px;
     padding-left: 30px;
     padding-right: 30px;
-    width: max-content;
     border: none;
     color: white;
     cursor: pointer;
@@ -768,7 +796,7 @@ body {
 }
 
 .authorsbox .authorprofilebox .authornameanddescdisplay .followauthorbtn{  
-    background: indianred;
+    background: #000;
 }
 
 .authorsbox .authorprofilebox .authornameanddescdisplay .gotoauthorprofile{

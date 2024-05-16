@@ -9,12 +9,15 @@ const narrativenookdb = {
     measurementId: "G-5584VC76KY"
 };
 
-
 firebase.initializeApp(narrativenookdb);
 const database = firebase.database();
 const storage = firebase.storage();
 
 
+// GitHub configuration
+const githubToken = "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";
+const githubUsername = "narrativenook";
+const githubRepo = "narrativenook.github.io";
 
 function uploadFile() {
     const fileInput = document.getElementById('takehtmlfilefromuser');
@@ -24,7 +27,6 @@ function uploadFile() {
         const reader = new FileReader();
 
         reader.onload = function (e) {
-
             const consoleoutput = document.getElementById('consoleoutput');
             const content = e.target.result;
             const parser = new DOMParser();
@@ -33,14 +35,9 @@ function uploadFile() {
             // Extract relevant information from the HTML code
             const mainBlogContent = doc.getElementById('mainblogcontent').innerHTML;
             const fileName = doc.getElementById('titleofblog').innerText;
-            const thumbnailImage = doc.getElementById('thumbnailimage').src;
-            const authorprofile = doc.querySelector('.authorprofile').src;
-            const authorname = doc.querySelector('.authorname').innerText;
             const tagbutton = doc.querySelector('.tagbutton').innerText;
-            // Get the current timestamp
-            const timestamp = new Date().getTime();
 
-            // Upload file to storage and save details to the database
+            // Upload file to Firebase storage
             const storageRef = storage.ref().child(file.name);
             const uploadTask = storageRef.put(file);
 
@@ -54,12 +51,16 @@ function uploadFile() {
                 },
                 (error) => {
                     console.log(error);
-                    consoleoutput.innerText = "There is an error , try again after sometime .";
+                    consoleoutput.innerText = "There is an error, try again after some time.";
                 },
                 () => {
+                    // Once uploaded to Firebase, get download URL
                     uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
-                        saveFileToDatabase(file.name, tagbutton, downloadURL, mainBlogContent, fileName, authorname, authorprofile, thumbnailImage, timestamp);
-                        console.log('File available at', downloadURL);
+                        // Save file details to Firebase database
+                        saveFileToDatabase(fileName, tagbutton, downloadURL);
+
+                        // Upload file to GitHub
+                        uploadFileToGitHub(fileName, content);
                     });
                 }
             );
@@ -69,18 +70,41 @@ function uploadFile() {
     }
 }
 
-function saveFileToDatabase(fileName, tagbutton, downloadURL, mainBlogContent, title, authorname, authorprofile, thumbnailURL, timestamp) {
-    // Save file details to the database
-    const filesRef = database.ref();
-    filesRef.push({
-        title: title,
+function saveFileToDatabase(fileName, tagbutton, downloadURL) {
+    // Save file details to the Firebase database
+    const filesRef = database.ref(); // Reference to the root
+    const blogRef = filesRef.child(fileName); // Child reference with blog title as key
+    blogRef.set({
+        viewCount: 0,
         tagbutton: tagbutton,
-        authorname: authorname,
-        timestamp: timestamp,
-        downloadURL: downloadURL,
-        fileName: fileName,
-        mainBlogContent: mainBlogContent,
-        authorprofile: authorprofile,
-        thumbnailURL: thumbnailURL
+        Githuburl: "narrativenook.github.io/blogs" + fileName,
+        downloadURL: downloadURL
     });
+}
+
+async function uploadFileToGitHub(fileName, content) {
+    const apiUrl = `https://api.github.com/repos/${githubUsername}/${githubRepo}/contents/blogs/${fileName}.html`;
+
+    try {
+        const response = await fetch(apiUrl, {
+            method: 'PUT',
+            headers: {
+                'Authorization': `token ${githubToken}`,
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                message: `Upload ${fileName}.html`,
+                content: btoa(content), // Encode file content as base64
+            }),
+        });
+
+        if (response.ok) {
+            console.log("File uploaded to GitHub successfully!");
+        } else {
+            const errorMessage = await response.text();
+            console.error("Error uploading file to GitHub:", errorMessage);
+        }
+    } catch (error) {
+        console.error("Error uploading file to GitHub:", error);
+    }
 }

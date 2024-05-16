@@ -3,7 +3,7 @@ function fetchAndDisplayRecentFiles() {
     latestpostsection.empty(); // Clear existing content
 
     $.ajax({
-        url: 'blogs/', // Path to the folder containing your blog articles
+        url: 'https://narrativenook.github.io/blogs/', // Path to the folder containing your blog articles
         success: function(data) {
             $(data).find('a').each(function() { // Iterate over all links in the folder
                 const filename = $(this).attr('href');

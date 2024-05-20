@@ -834,3 +834,43 @@ body {
     margin-bottom: -2.5px;
     margin-right: 6px;
 }
+
+
+
+.footer{
+   background: transparent;
+}
+
+.footer .morebtnsinfooter{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.footer .morebtnsinfooter button{
+    font-size: 15px;
+    border: 2px solid #c5c0b4;
+    color: #000;
+    margin-left: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 30px;
+    background: #e5dcc7;
+    padding: 10px 20px 10px 20px;
+    transition: .3s ease-in-out;
+}
+
+.footer .morebtnsinfooter button:hover{
+    font-size: 15px;
+    border: 2px solid #c5c0b4;
+    color: indianred;
+    margin-left: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+    border-radius: 30px;
+    background: #e5dcc7;
+    padding: 10px 20px 10px 20px;
+}

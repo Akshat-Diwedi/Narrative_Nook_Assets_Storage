@@ -9,7 +9,7 @@ var publishingDateInput = document.getElementById('publishingdate');
 var mainBlogContentTextarea = document.getElementById('mainblogcontentortext');
 var blogtextconclusion = document.getElementById('blogtextconclusion');
 
-var selectedOptionText = '# '+ '';
+var selectedOptionText = '# ' + '';
 var base64Url = '';
 
 function convertToBase64() {
@@ -35,54 +35,66 @@ function updateIframeContent() {
 
     if (authorNameInput.value === 'Nitya Diwedi') {
         authorprofile = '<center><img src="https://cdn.jsdelivr.net/gh/Nuclear-Games/Narrative_Nook_Assets_Storage@main/authors/nityadiwedi.webp" class="authorprofile"></center>';
-    } 
-    
+    }
+
     else if (authorNameInput.value === 'Akshat Diwedi') {
         authorprofile = '<center><img src="https://cdn.jsdelivr.net/gh/Nuclear-Games/Narrative_Nook_Assets_Storage@main/authors/akshat.jpg" class="authorprofile"></center>';
     }
 
-    
+
     var htmlContent = `<!DOCTYPE html>
     <html lang="en">
     
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta property="type" content="article">
-        <meta name="keywords" content="${keywords.value} , narrative nook">
-        <meta name="description" content="${description.value}">
-        <meta name="robots" content="index, follow">
-        <meta name="author" content="${authorNameInput.value}">
-    
-        <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-storage.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-database.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Nuclear-Games/Narrative_Nook_Assets_Storage@main/css/blogv1.css">
-    
-        <title>${inputText.value}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="type" content="article">
+    <link rel="icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/Akshat-Diwedi/Narrative_Nook_Assets_Storage@main/logo/NN2.ico">
+    <meta name="keywords" content="${keywords.value} , narrative nook">
+    <meta name="description" content="${description.value}">
+    <meta name="robots" content="INDEX, FOLLOW">
+    <meta name="author" content="${authorNameInput.value}">
+
+    <meta property="og:image" content="https://cdn.jsdelivr.net/gh/Akshat-Diwedi/Narrative_Nook_Assets_Storage@main/logo/comp-logo.png">
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/Akshat-Diwedi/Narrative_Nook_Assets_Storage@main/logo/comp-logo.png" type="image/x-icon">
+
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MSCR6F3C');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7173793275169905" crossorigin="anonymous"></script>
+    <meta name="google-site-verification" content="OCV8EpD187GIS1Omnljjkf3_sNlSv2tx-IoASFeQUFs" />
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-database.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link id="csstylesheetplace" rel="stylesheet" href="">
+    <title>${inputText.value}</title>
     </head>
     
     <body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MSCR6F3C" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     
-        <center>
             <div class="topbar">
-                <center>
-                    <center>
-                        <h2 class="logoname">Narrative &nbsp;&nbsp; Nook</h2>
-                    </center>
-    
-                    <div class="searchbox">
-                        <input type="text" class="postsearch" placeholder="Search Post Here !"
-                            oninput="enableSearchButton()">
-                        <button class="searchpostbtn" onclick="searchpost()" id="searchButton" disabled><i
-                                class="fas fa-search"></i></button>
-                    </div>
-    
-                </center>
+                <h2 class="logoname">Narrative &nbsp;&nbsp; Nook</h2>
+                <div class="searchbox">
+                    <input type="text" class="postsearch" placeholder="Search Post Here !" oninput="enableSearchButton()">
+                    <button class="searchpostbtn" onclick="searchpost()" id="searchButton" disabled><i class="fas fa-search"></i></button>
+                </div>
             </div>
-        </center>
     
     
         <center>
@@ -173,7 +185,23 @@ function updateIframeContent() {
         </div>
     
         <script src="https://cdn.jsdelivr.net/gh/Nuclear-Games/Narrative_Nook_Assets_Storage@main/javascript/blogarticlescriptv1.js"></script>
-    
+        <script>
+        function checkWidthAndStyle() {
+            var link = document.getElementById("csstylesheetplace");
+            if (document.body.offsetWidth > 500) {
+                link.setAttribute('href', 'https://cdn.jsdelivr.net/gh/Nuclear-Games/Narrative_Nook_Assets_Storage@main/css/blogv3.css');
+            } else if (document.body.offsetWidth <= 500) {
+                link.setAttribute('href', 'https://cdn.jsdelivr.net/gh/Nuclear-Games/Narrative_Nook_Assets_Storage@main/css/mobileblogfile.css');
+            } else {
+                console.log("Something went wrong!");
+            }
+        }
+
+        checkWidthAndStyle();
+        window.addEventListener('resize', function () {
+            checkWidthAndStyle();
+        });
+        </script>
     </body>
     
     </html>`;

@@ -110,21 +110,66 @@ h2 {
     font-family: "poppins", sans-serif;
 }
 
-.box .elementsbox select {
-    width: 53%;
-    height: 43px;
-    border: none;
-    border-radius: 7px;
-    padding-left: 30px;
-    padding-right: 30px;
-    outline: none;
-    margin-bottom: 10px;
-    color: indianred;
-    font-weight: bold;
-    letter-spacing: 1.5px;
-    background: rgba(255, 255, 255, 0.104);
+.custom-select-wrapper {
+    position: relative;
+    width: 300px;
     font-family: "Hellix";
 }
+
+.custom-select {
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    background: #ffffff1b;
+    font-family: "Hellix";
+}
+
+.custom-select-wrapper::after {
+    content: '▼';
+    position: absolute;
+    top: 70%;
+    right: 15px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #888;
+}
+
+.custom-select-wrapper {
+    margin: 20px 0;
+}
+
+/* Additional styles for better appearance */
+.custom-select-wrapper label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Bold label styles */
+.custom-select optgroup {
+    font-weight: bold;
+    color: #555;
+    font-style: normal;
+}
+
+.custom-select option {
+    padding-left: 15px;
+}
+
+
+
+
+
+
 
 .box .elementsbox textarea {
     width: 53%;
@@ -142,7 +187,7 @@ h2 {
 }
 
 .box .elementsbox button {
-    width: 50%;
+    width: 30%;
     height: 43px;
     border: none;
     border-radius: 7px;
@@ -155,7 +200,7 @@ h2 {
     font-weight: bolder;
     margin-top: 10px;
     margin-bottom: 45px;
-    border: 2px solid white;
+    border: 1px solid white;
     background: rgba(255, 255, 255, 0.104);
     font-family: "poppins", sans-serif;
 }

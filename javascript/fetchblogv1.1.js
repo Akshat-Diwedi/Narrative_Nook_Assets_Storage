@@ -15,14 +15,13 @@ function fetchAndDisplayRecentFiles() {
                     const fileData = childSnapshot.val();
 
 
-
                     const allbuttons = document.createElement('div');
                     allbuttons.className = 'allbuttons';
 
 
                     const linkofblog = document.createElement('a');
                     linkofblog.className = 'linkofblog';
-                    linkofblog.href = fileData.downloadURL || '';
+                    linkofblog.href = fileData.Githuburl || '';
                     linkofblog.target = '_blank';
 
 
@@ -44,7 +43,7 @@ function fetchAndDisplayRecentFiles() {
                     console.log(formattedDate);
                     const timestampdisplay = document.createElement('p');
                     timestampdisplay.className = 'timestampdisplay';
-                    timestampdisplay.innerText = "• " + formattedDate || '';
+                    timestampdisplay.innerText = "▪ " + formattedDate || '';
 
 
 
@@ -131,7 +130,7 @@ function getFirst40Words(text) {
         return '';
     }
     const words = text.split(' ');
-    const first40Words = words.slice(0, 25).join(' ') + " . . .";
+    const first40Words = words.slice(0, 40).join(' ') + " . . .";
     return first40Words;
 }
 

@@ -13,13 +13,13 @@ firebase.initializeApp(narrativenookdb);
 const database = firebase.database();
 const storage = firebase.storage();
 
-
 // GitHub configuration
-const githubToken = "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";
+const githubToken = "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";
 const githubUsername = "narrativenook";
 const githubRepo = "narrativenook.github.io";
 
 function uploadFile() {
+    document.querySelector('.bloguploadbtn');
     const fileInput = document.getElementById('takehtmlfilefromuser');
     const file = fileInput.files[0];
 
@@ -35,7 +35,29 @@ function uploadFile() {
             // Extract relevant information from the HTML code
             const mainBlogContent = doc.getElementById('mainblogcontent').innerHTML;
             const fileName = doc.getElementById('titleofblog').innerText;
+            const thumbnailImage = doc.getElementById('thumbnailimage').src;
+            const authorprofile = doc.querySelector('.authorprofile').src;
+            const authorname = doc.querySelector('.authorname').innerText;
             const tagbutton = doc.querySelector('.tagbutton').innerText;
+            // Get the current timestamp
+            const timestamp = new Date().getTime();
+
+
+
+            // Function to get the first 40 words of a text
+            function getFirst40Words(text) {
+                if (typeof text !== 'string' || text.trim() === '') {
+                    return '';
+                }
+                const words = text.split(' ');
+                const first40Words = words.slice(0, 40).join(' ');
+                return first40Words;
+            }
+
+            
+            first40wordsofblogcont = getFirst40Words(mainBlogContent);
+
+
 
             // Upload file to Firebase storage
             const storageRef = storage.ref().child(file.name);
@@ -57,7 +79,7 @@ function uploadFile() {
                     // Once uploaded to Firebase, get download URL
                     uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
                         // Save file details to Firebase database
-                        saveFileToDatabase(fileName, tagbutton, downloadURL);
+                        saveFileToDatabase(file.name, tagbutton, downloadURL, first40wordsofblogcont, fileName, authorname, authorprofile, thumbnailImage, timestamp);
 
                         // Upload file to GitHub
                         uploadFileToGitHub(fileName, content);
@@ -70,22 +92,44 @@ function uploadFile() {
     }
 }
 
-function saveFileToDatabase(fileName, tagbutton, downloadURL) {
+function saveFileToDatabase(fileName, tagbutton, downloadURL, first40wordsofblogcont, title, authorname, authorprofile, thumbnailURL, timestamp) {
     // Save file details to the Firebase database
     const filesRef = database.ref(); // Reference to the root
-    const blogRef = filesRef.child(fileName); // Child reference with blog title as key
-    blogRef.set({
-        viewCount: 0,
+    filesRef.push({
+        // fileName: fileName,
+        title: title,
         tagbutton: tagbutton,
-        Githuburl: "narrativenook.github.io/blogs" + fileName,
-        downloadURL: downloadURL
+        authorname: authorname,
+        timestamp: timestamp,
+        mainBlogContent: first40wordsofblogcont,
+        authorprofile: authorprofile,
+        downloadURL: downloadURL,
+        Githuburl: "narrativenook.github.io/blogs/" + fileName,
+        thumbnailURL: thumbnailURL
     });
 }
+
+
 
 async function uploadFileToGitHub(fileName, content) {
     const apiUrl = `https://api.github.com/repos/${githubUsername}/${githubRepo}/contents/blogs/${fileName}.html`;
 
+    function base64EncodeUnicode(str) {
+        const uint8Array = new TextEncoder().encode(str);
+        let binary = '';
+        const len = uint8Array.byteLength;
+        for (let i = 0; i < len; i++) {
+            binary += String.fromCharCode(uint8Array[i]);
+        }
+        return btoa(binary);
+    }
+
+    const base64Content = base64EncodeUnicode(content);
+
     try {
+        console.log("Uploading to GitHub...");
+        console.log("API URL: ", apiUrl);
+
         const response = await fetch(apiUrl, {
             method: 'PUT',
             headers: {
@@ -94,7 +138,7 @@ async function uploadFileToGitHub(fileName, content) {
             },
             body: JSON.stringify({
                 message: `Upload ${fileName}.html`,
-                content: btoa(content), // Encode file content as base64
+                content: base64Content, // Encode file content as base64
             }),
         });
 

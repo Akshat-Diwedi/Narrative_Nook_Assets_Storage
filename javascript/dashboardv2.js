@@ -14,7 +14,7 @@ const database = firebase.database();
 const storage = firebase.storage();
 
 // GitHub configuration
-const githubToken = "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";
+const githubToken = "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";
 const githubUsername = "narrativenook";
 const githubRepo = "narrativenook.github.io";
 
@@ -104,7 +104,7 @@ function saveFileToDatabase(fileName, tagbutton, downloadURL, first40wordsofblog
         mainBlogContent: first40wordsofblogcont,
         authorprofile: authorprofile,
         downloadURL: downloadURL,
-        Githuburl: "narrativenook.github.io/blogs/" + fileName,
+        Githuburl: "blogs/" + fileName,
         thumbnailURL: thumbnailURL
     });
 }

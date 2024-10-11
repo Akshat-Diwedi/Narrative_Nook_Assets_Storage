@@ -4,7 +4,7 @@ async function summarisetheblog() {
     const responseOutput = document.querySelector('.aisummarisedcontent');
     const aisummarisingbutton = document.querySelector('.aisummarisingbutton');
 
-    const apiKey = "";
+    const apiKey = "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";
     const apiUrl = "https://api.groq.com/openai/v1/chat/completions";
     const model = "llama3-8b-8192";
 

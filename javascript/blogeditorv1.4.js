@@ -184,7 +184,7 @@ function updateIframeContent() {
     
         </div>
     
-        <script src="https://cdn.jsdelivr.net/gh/Nuclear-Games/Narrative_Nook_Assets_Storage@main/javascript/blogarticlescriptv1.js"></script>
+        <script src="https://cdn.jsdelivr.net/gh/Nuclear-Games/Narrative_Nook_Assets_Storage@main/javascript/blogarticlescriptv2.js"></script>
         <script>
         function checkWidthAndStyle() {
             var link = document.getElementById("csstylesheetplace");
